@@ -118,7 +118,21 @@ class LinkedList:
                 currentNode.next = None
                 self.length -= 1
             return prevNode
-             
+    
+    def reverse(self):
+        tempNode = self.head
+        self.head = self.tail
+        self.tail = tempNode
+        after = tempNode.next
+        before = None
+        for _ in range(self.length):
+            after = tempNode.next
+            tempNode.next = before
+            before = tempNode
+            tempNode = after
+
+
+
     def print_list(self):
         temp = self.head
         while temp is not None:
@@ -165,9 +179,21 @@ my_linked_list.insert(5, 67)
 print('Print LinkedList after adding new node at specific Index: ')
 my_linked_list.print_list()
 
-print('Delete node with index: ')
-my_linked_list.remove(2)
+print('Delete node with index: 1')
+my_linked_list.remove(1)
 
 print('Print LinkedList after delete node at specific Index: ')
+my_linked_list.print_list()
+
+print('Again Insert new node in index: 2')
+my_linked_list.insert(2, 90)
+
+print('Print LinkedList after adding new node at specific Index: ')
+my_linked_list.print_list()
+
+print('Reverse the linked list: ')
+my_linked_list.reverse()
+
+print('Print the final linked list: ')
 my_linked_list.print_list()
 
