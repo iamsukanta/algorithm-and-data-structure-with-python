@@ -36,15 +36,28 @@ class LinkedList:
             temp = self.head
             for _ in range(self.length - 1):
                 temp = temp.next
+            temp.next = None
             self.tail = temp
-            self.tail.next = None
             self.length -= 1
         return True
+    
+    def append_first(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+            self.length = 1
+        else:
+            new_node.next = self.head.next
+            self.head = new_node
+            self.length += 1
+        return True
+
     
     def print_linked_list(self):
         temp_node = self.head
         if self.length:
-            for _ in range(self.length):
+            while temp_node is not None:
                 print(temp_node.value)
                 temp_node = temp_node.next
         else:
@@ -69,6 +82,6 @@ print("After pop a new new node at the end:")
 my_linked_list.pop()
 my_linked_list.print_linked_list()
 
-print("After pop a new new node at the end:")
-my_linked_list.pop()
+print("After append a new new node at the first:")
+my_linked_list.append_first(43)
 my_linked_list.print_linked_list()
