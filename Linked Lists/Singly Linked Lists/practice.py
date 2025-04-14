@@ -24,9 +24,9 @@ class LinkedList:
         return True
     
     def pop(self):
-        if self.head is None:
+        if self.length is 0:
             print("Linked List is Empty")
-            return False
+            return None
         
         if self.length is 1:
             self.head = None
@@ -34,10 +34,11 @@ class LinkedList:
             self.length -= 1
         else:
             temp = self.head
-            for _ in range(self.length - 1):
+            while(temp.next):
+                pre = temp
                 temp = temp.next
-            temp.next = None
-            self.tail = temp
+            self.tail = pre
+            self.tail.next = None
             self.length -= 1
         return True
     
