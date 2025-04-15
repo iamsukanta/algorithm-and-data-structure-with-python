@@ -27,20 +27,17 @@ class LinkedList:
         if self.length is 0:
             print("Linked List is Empty")
             return None
-        
-        if self.length is 1:
+        temp = self.head
+        while(temp.next):
+            pre = temp
+            temp = temp.next
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+        if self.length is 0:
             self.head = None
             self.tail = None
-            self.length -= 1
-        else:
-            temp = self.head
-            while(temp.next):
-                pre = temp
-                temp = temp.next
-            self.tail = pre
-            self.tail.next = None
-            self.length -= 1
-        return True
+        return temp
     
     def append_first(self, value):
         new_node = Node(value)
