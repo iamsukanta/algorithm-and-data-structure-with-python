@@ -99,6 +99,26 @@ class DoublyLinkedLists:
         after.prev = new_node
         self.length += 1
         return True
+    
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if (self.length - 1) == index:
+            return self.pop()
+        if index == 0:
+            return self.pop_first()
+        temp = self.get(index)
+        # tempPrev = temp.prev
+        # tempNext = temp.next
+        # tempPrev.next = tempNext
+        # tempNext.prev = tempPrev
+        temp.next.prev = temp.prev
+        temp.prev.next = temp.next
+        temp.next = None
+        temp.prev = None
+        self.length -= 1
+        return temp
+
 
     def print_list(self):
         temp = self.head
@@ -138,4 +158,9 @@ my_doubly_linked_list.print_list()
 
 print('----------------- Insert node with specific index ------------------')
 my_doubly_linked_list.insert(2, 90)
+my_doubly_linked_list.print_list()
+
+
+print('----------------- Remove node with specific index ------------------')
+my_doubly_linked_list.remove(7)
 my_doubly_linked_list.print_list()
