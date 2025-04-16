@@ -62,6 +62,43 @@ class DoublyLinkedLists:
             temp.next = None
         self.length -= 1
         return temp
+    
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index < (self.length/2):
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+        else:
+            temp = self.tail
+            for _ in range(self.length -1, index, -1):
+                temp = temp.prev
+        return temp
+    
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+    
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if self.length == index:
+            return self.append(value)
+        if index == 0:
+            return self.prepend(value)
+        new_node = Node(value)
+        before = self.get(index - 1)
+        after = before.next
+        new_node.next = after
+        new_node.prev = before
+        before.next = new_node
+        after.prev = new_node
+        self.length += 1
+        return True
 
     def print_list(self):
         temp = self.head
@@ -76,6 +113,10 @@ print('----------------- After append new node at the end:------------------')
 my_doubly_linked_list.append(25)
 my_doubly_linked_list.print_list()
 
+print('----------------- After append new node at the end:------------------')
+my_doubly_linked_list.append(99)
+my_doubly_linked_list.print_list()
+
 print('----------------- After pop at the end:------------------')
 my_doubly_linked_list.pop()
 my_doubly_linked_list.print_list()
@@ -86,4 +127,15 @@ my_doubly_linked_list.print_list()
 
 print('----------------- After pop first at the beginning:------------------')
 my_doubly_linked_list.pop_first()
+my_doubly_linked_list.print_list()
+
+print('----------------- Get node with specific index ------------------')
+print(my_doubly_linked_list.get(0))
+
+print('----------------- Set node with specific index ------------------')
+my_doubly_linked_list.set_value(0, 57)
+my_doubly_linked_list.print_list()
+
+print('----------------- Insert node with specific index ------------------')
+my_doubly_linked_list.insert(2, 90)
 my_doubly_linked_list.print_list()
