@@ -108,10 +108,6 @@ class DoublyLinkedLists:
         if index == 0:
             return self.pop_first()
         temp = self.get(index)
-        # tempPrev = temp.prev
-        # tempNext = temp.next
-        # tempPrev.next = tempNext
-        # tempNext.prev = tempPrev
         temp.next.prev = temp.prev
         temp.prev.next = temp.next
         temp.next = None
