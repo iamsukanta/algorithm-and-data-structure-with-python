@@ -28,19 +28,27 @@ class Stack:
         else:
             self.top = temp.next
             temp.next = None
+        self.height -= 1
         return temp
 
 
     def print_stack(self):
         temp = self.top
-        if temp is not None:
+        while temp is not None:
             print(temp.value)
             temp = temp.next
 
+print('Initialization stack with 4:')
 my_stack = Stack(4)
 my_stack.print_stack()
 
-print('Stack item after 1 push:')
+print('Stack item after 2 push:')
 my_stack.push(5)
 my_stack.push(58)
+my_stack.print_stack()
+
+print('Stack item after third pop:')
+my_stack.pop()
+my_stack.pop()
+my_stack.pop()
 my_stack.print_stack()
