@@ -16,3 +16,7 @@ Implementation link: [Doubly Linked List Implementation](./Linked%20Lists/Doubly
 Implementation link: [Stack Implementation](./Stack%20and%20Queue/Stack/app.py)
 
 ### Queue
+
+
+## Tree (Binary Search Tree)
+Implementation link: [BST Implementation](./Tree/Binary%20Search%20Tree/app.py)
