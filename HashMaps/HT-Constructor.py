@@ -16,6 +16,7 @@ class HashTable:
             self.data_map[index] = []
         self.data_map[index].append([key, value])
     
+    # Get item added
     def get_item(self, key):
         index = self.__hash(key)
         if self.data_map[index] is not None:
@@ -24,6 +25,7 @@ class HashTable:
                     return self.data_map[index][i][1]
         return None
     
+    # Retrieve all keys
     def keys(self):
         all_keys = []
         for i in range(len(self.data_map)):
