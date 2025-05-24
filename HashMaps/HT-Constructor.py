@@ -1,6 +1,6 @@
 class HashTable:
     def __init__(self, size = 7):
-        self.data_map = [None]*7
+        self.data_map = [None]*size
     
     # Adding Hash Methods
     def __hash(self, key):
@@ -35,6 +35,7 @@ class HashTable:
         return all_keys
     
     def print_table(self):
+        print(self.data_map);
         for i, val in enumerate(self.data_map):
             print(i, ":", val)
 
