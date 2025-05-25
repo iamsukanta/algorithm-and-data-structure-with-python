@@ -20,3 +20,7 @@ Implementation link: [Stack Implementation](./Stack%20and%20Queue/Stack/app.py)
 
 ## Tree (Binary Search Tree)
 Implementation link: [BST Implementation](./Tree/Binary%20Search%20Tree/app.py)
+
+## HashTable
+Implementation link: [Hashtable Implementation](./HashMaps/HT-Constructor.py)
+Leetcode Problem Solution: [Hashtable Leetcode](./HashMaps/HT-Leetcode.py)
