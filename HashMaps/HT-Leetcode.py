@@ -85,15 +85,22 @@ def two_sum1(list, target):
 
 # Two sum good approach, 
 def two_sum2(list, target):
-    for i in range(len(list)):
-        for j in range(len(list)):
-            if i == j:
-                continue
-            else:
-                if list[i] + list[j] == target:
-                    return [i, j]
+    my_dict = {}
+    for i, num in enumerate(list):
+        complement = target - num
+        if complement in my_dict:
+            return [my_dict[complement], i]
+        my_dict[num] = i
     return []
 
-print('Two Sum: ', two_sum1([10, 15, 5, 2, 8, 1, 7], 12))
-print('Two Sum: ', two_sum2([10, 15, 5, 2, 8, 1, 7], 12))
+print('Two Sum: ', two_sum1([10, 15, 5, 5, 8, 1, 7], 10))
+print('Two Sum: ', two_sum2([10, 15, 5, 5, 8, 1, 7], 10))
+
+# --------------------****--------------------
+# Subarray Sum's 
+
+def subarray_sum(arraylist, target)
+    pass
+
+print('Subarray Sum: ', subarray_sum([1, 4, 5, 5], 5))
 
