@@ -40,3 +40,20 @@ def find_duplicates(list):
     return duplicate_list
 duplicate_list = [1, 2, 3, 4, 5, 5]
 print('Duplicate List: ', find_duplicates(duplicate_list))
+
+#----------------------------***-------------------------
+
+#First Non repeating character
+
+def first_non_repeating_char(word):
+    my_dict = {}
+    for i in word:
+        if i in my_dict:
+            del my_dict[i]
+        else:
+            my_dict[i] = True
+    
+    first_key = next(iter(my_dict), None)
+    return first_key
+
+print('First non repeating char: ', first_non_repeating_char('leetcode'))
