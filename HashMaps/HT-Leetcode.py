@@ -44,7 +44,6 @@ print('Duplicate List: ', find_duplicates(duplicate_list))
 #----------------------------***-------------------------
 
 #First Non repeating character
-
 def first_non_repeating_char(word):
     my_dict = {}
     for i in word:
@@ -57,3 +56,44 @@ def first_non_repeating_char(word):
     return first_key
 
 print('First non repeating char: ', first_non_repeating_char('leetcode'))
+
+# -------------------------------****-------------------------------
+# Find Anagram groups
+def group_anagrams(strings):
+    my_dict = {}
+    for word in strings:
+        key = ''.join(sorted(word))
+        if key not in my_dict:
+            my_dict[key] = []
+        my_dict[key].append(word)
+
+    return list(my_dict.values())
+
+print ('Anagrams groups: ', group_anagrams(['eat', 'tan', 'bat', 'tea']))
+
+# -----------------------------****-----------------------------------
+# Two sum function Bad approach, Time complexity: O(n*2)
+def two_sum1(list, target):
+    for i in range(len(list)):
+        for j in range(len(list)):
+            if i == j:
+                continue
+            else:
+                if list[i] + list[j] == target:
+                    return [i, j]
+    return []
+
+# Two sum good approach, 
+def two_sum2(list, target):
+    for i in range(len(list)):
+        for j in range(len(list)):
+            if i == j:
+                continue
+            else:
+                if list[i] + list[j] == target:
+                    return [i, j]
+    return []
+
+print('Two Sum: ', two_sum1([10, 15, 5, 2, 8, 1, 7], 12))
+print('Two Sum: ', two_sum2([10, 15, 5, 2, 8, 1, 7], 12))
+
