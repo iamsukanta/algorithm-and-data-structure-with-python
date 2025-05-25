@@ -99,7 +99,7 @@ print('Two Sum: ', two_sum2([10, 15, 5, 5, 8, 1, 7], 10))
 # --------------------****--------------------
 # Subarray Sum's 
 
-def subarray_sum(arraylist, target)
+def subarray_sum(arraylist, target):
     pass
 
 print('Subarray Sum: ', subarray_sum([1, 4, 5, 5], 5))
