@@ -30,7 +30,7 @@ Leetcode Problem Solution: [Hashtable Leetcode](./HashMaps/HT-Leetcode.py)
 Implementation link: [Graph Implementation](./Graph/app.py)
 
 ## Heap
-Implementation lin: [Heap Implementation](./Heap/app.py)
+Implementation link: [Heap Implementation](./Heap/app.py)
 
 ## Recursion
 Implementation link: [Recursion Implementation](./Recursion/app.py)
